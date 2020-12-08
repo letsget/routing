@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ComponentType } from "react";
 
 import AboutPage from "../pages/AboutPage";
 import CartPage from "../pages/CartPage";
@@ -10,63 +10,51 @@ import PaymentPage from "../pages/PaymentPage";
 import ProfilePage from "../pages/ProfilePage";
 import NotFoundPage from "../pages/NotFoundPage";
 
-enum RouteType {
-  authorized = "authorized",
-  private = "private",
-  regular = "regular",
-}
-
 interface Route {
-  type: RouteType;
   path?: string;
   exact?: boolean;
-  component: ReactNode;
+  component: ComponentType;
+  authorized?: boolean;
 }
 
 export const routes: Route[] = [
   {
-    type: RouteType.authorized,
     path: "/",
     exact: true,
     component: LoginPage,
   },
   {
-    type: RouteType.regular,
     path: "/about-page",
     component: AboutPage,
   },
   {
-    type: RouteType.private,
     path: "/card-page",
     component: CartPage,
+    authorized: true,
   },
   {
-    type: RouteType.regular,
     path: "/contacts-page",
     component: ContactsPage,
   },
   {
-    type: RouteType.authorized,
     path: "/home-page",
     component: HomePage,
   },
   {
-    type: RouteType.regular,
     path: "/partners-page",
     component: PartnersPage,
   },
   {
-    type: RouteType.private,
     path: "/payment-page",
     component: PaymentPage,
+    authorized: true,
   },
   {
-    type: RouteType.private,
     path: "/profile-page",
     component: ProfilePage,
+    authorized: true,
   },
   {
-    type: RouteType.regular,
     component: NotFoundPage,
   },
 ];

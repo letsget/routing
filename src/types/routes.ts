@@ -1,12 +1,5 @@
-import { ReactNode } from "react";
+import { RouteComponentProps } from "react-router-dom";
 
-export interface RouteProps {
+export interface PrivateRouteProps extends RouteComponentProps {
   data: null | {};
-  component: ReactNode;
-}
-
-export interface RouteMapping {
-  authorized: ReactNode;
-  private: ReactNode;
-  regular: ReactNode;
 }
