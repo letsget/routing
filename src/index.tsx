@@ -1,12 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import { Router } from "react-router-dom";
 
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 import { history } from "./app/history";
 
-ReactDOM.render(
+render(
   <React.StrictMode>
     <Router history={history}>
       <App />
