@@ -12,7 +12,6 @@ export const routes: RouteProps[] = [
     component: Main,
     exact: true,
     layout: AppLayout,
-    authorized: true,
   },
   {
     path: "/profile",
@@ -249,11 +248,9 @@ export const routes: RouteProps[] = [
     path: "/noaccess",
     component: NoAccess,
     exact: true,
-    authorized: true,
   },
   {
     path: "/*",
     component: TestPage,
-    authorized: true,
   },
 ];
