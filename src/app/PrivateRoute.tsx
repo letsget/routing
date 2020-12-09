@@ -1,24 +1,15 @@
-import React, { ComponentType } from "react";
+import React, { FC } from "react";
 import { Route, Redirect } from "react-router-dom";
 
-interface PrivateRouteProps {
-  component: ComponentType;
+interface Props {
+  component: FC;
   path: string;
-  exact: boolean;
+  exact?: boolean;
   data: null | {};
 }
 
-const PrivateRoute: ComponentType<PrivateRouteProps> = ({
-  component,
-  data,
-  exact,
-  path,
-}) => {
-  return data ? (
-    <Route path={path} exact={exact} component={component} />
-  ) : (
-    <Redirect to="/" />
-  );
+const PrivateRoute: FC<Props> = ({ data, ...props }) => {
+  return data ? <Route {...props} /> : <Redirect to="/" />;
 };
 
 export default PrivateRoute;

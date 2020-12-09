@@ -1,7 +1,8 @@
-import { ComponentType } from "react";
-import { RouteProps } from "react-router-dom";
+import { FC } from "react";
 
-export interface PrivateRouteProps extends RouteProps {
-  data: null | {};
-  component: ComponentType;
+export interface RouteProps {
+  path: string;
+  exact?: boolean;
+  component: FC;
+  authorized: boolean;
 }

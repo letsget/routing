@@ -6,22 +6,11 @@ import { routes } from "./routes";
 
 const MainRouter = () => (
   <Switch>
-    {routes.map(({ path, exact, component, authorized }) =>
+    {routes.map(({ authorized, path, ...props }) =>
       authorized ? (
-        <PrivateRoute
-          key={`id-${path}`}
-          path={path}
-          component={component}
-          exact={exact}
-          data={null}
-        />
+        <PrivateRoute key={`id-${path}`} path={path} data={null} {...props} />
       ) : (
-        <Route
-          key={`id-${path}`}
-          path={path}
-          exact={exact}
-          component={component}
-        />
+        <Route key={`id-${path}`} path={path} {...props} />
       )
     )}
   </Switch>

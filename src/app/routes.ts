@@ -1,4 +1,4 @@
-import { ComponentType } from "react";
+import { FC } from "react";
 
 import AboutPage from "../pages/AboutPage";
 import CartPage from "../pages/CartPage";
@@ -12,8 +12,8 @@ import NotFoundPage from "../pages/NotFoundPage";
 
 interface Route {
   path: string;
-  exact: boolean;
-  component: ComponentType;
+  exact?: boolean;
+  component: FC;
   authorized: boolean;
 }
 
