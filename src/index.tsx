@@ -1,10 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
 import { Router } from "react-router-dom";
+import { createBrowserHistory, History } from "history";
 
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
-import { history } from "./app/history";
+
+const history: History = createBrowserHistory();
 
 render(
   <React.StrictMode>

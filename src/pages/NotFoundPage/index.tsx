@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 
-const NotFoundPage: FC = () => {
-  return <div>NotFoundPage</div>;
-};
+const NotFoundPage: FC = () => <div>NotFoundPage</div>;
+
 export default NotFoundPage;

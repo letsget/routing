@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 
-const ContactsPage: FC = () => {
-  return <div>ContactsPage</div>;
-};
+const ContactsPage: FC = () => <div>ContactsPage</div>;
+
 export default ContactsPage;

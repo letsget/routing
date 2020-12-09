@@ -1,24 +1,23 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
-import { Route } from "react-router-dom";
+import React, { ComponentType } from "react";
+import { Route, Redirect } from "react-router-dom";
 
-const PrivateRoute = ({ data, component: Component, ...rest }: any) => {
-  return (
-    <Route
-      {...rest}
-      render={(props: any) => {
-        return data ? (
-          <Component {...props} key={props.location.pathname} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/",
-              state: { from: props.location },
-            }}
-          />
-        );
-      }}
-    />
+interface PrivateRouteProps {
+  component: ComponentType;
+  path: string;
+  exact: boolean;
+  data: null | {};
+}
+
+const PrivateRoute: ComponentType<PrivateRouteProps> = ({
+  component,
+  data,
+  exact,
+  path,
+}) => {
+  return data ? (
+    <Route path={path} exact={exact} component={component} />
+  ) : (
+    <Redirect to="/" />
   );
 };
 

@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 
-const PartnersPage: FC = () => {
-  return <div>PartnersPage</div>;
-};
+const PartnersPage: FC = () => <div>PartnersPage</div>;
+
 export default PartnersPage;
