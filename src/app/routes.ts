@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { ReactNode } from "react";
 
 import AboutPage from "../pages/AboutPage";
 import CartPage from "../pages/CartPage";
@@ -9,15 +9,16 @@ import PartnersPage from "../pages/PartnersPage";
 import PaymentPage from "../pages/PaymentPage";
 import ProfilePage from "../pages/ProfilePage";
 import NotFoundPage from "../pages/NotFoundPage";
+import { RouteProps } from "../types/routes";
 
 interface Route {
   path: string;
   exact?: boolean;
-  component: FC;
+  component: ReactNode;
   authorized: boolean;
 }
 
-export const routes: Route[] = [
+export const routes: RouteProps[] = [
   {
     path: "/",
     exact: true,

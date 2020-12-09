@@ -8,9 +8,14 @@ const MainRouter = () => (
   <Switch>
     {routes.map(({ authorized, path, ...props }) =>
       authorized ? (
-        <PrivateRoute key={`id-${path}`} path={path} data={null} {...props} />
+        <PrivateRoute
+          {...props}
+          key={`id-${path}`}
+          path={path}
+          authorized={authorized}
+        />
       ) : (
-        <Route key={`id-${path}`} path={path} {...props} />
+        <Route {...props} key={`id-${path}`} path={path} />
       )
     )}
   </Switch>

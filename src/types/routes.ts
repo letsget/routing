@@ -4,5 +4,6 @@ export interface RouteProps {
   path: string;
   exact?: boolean;
   component: FC;
-  authorized: boolean;
+  layout?: FC;
+  authorized?: boolean;
 }
